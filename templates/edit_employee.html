@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Employees list</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Surname</th>
+      <th scope="col">Birthday</th>
+      <th scope="col">Position</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Start Date</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for employee in employees %}
+    <tr>
+      <td>{{employee['id']}}</td>
+      <td>{{employee['name']}}</td>
+      <td>{{employee['surname']}}</td>
+      <td>{{employee['birthday']}}</td>
+      <td>{{employee['position']}}</td>
+      <td>{{employee['salary']}}</td>
+      <td>{{employee['start_date']}}</td>
+    </tr>
+  {% endfor %}
+<br>
+<br>
+
+</tbody>
+</table>
+<h3>Edit employee</h3>
+<form method="post">
+<div class="mb-3">
+  <label for="exampleFormControlInput2" class="form-label">Employee to be edited Id</label><br>
+  <input name = "id" type="text" class="form-control-sm" id="exampleFormControlInput2" >
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput2" class="form-label">New Employee Name</label><br>
+  <input name = "name" type="text" class="form-control-sm" id="exampleFormControlInput2" >
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput2" class="form-label">New Employee Surname</label><br>
+  <input name = "surname" type="text" class="form-control-sm" id="exampleFormControlInput2" >
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput3" class="form-label">New Employee Birthday</label><br>
+  <input name = "birthday" type="text" class="form-control-sm" id="exampleFormControlInput3" >
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput4" class="form-label">New Employee Position</label><br>
+  <input name="position" type="text" class="form-control-sm" id="exampleFormControlInput4" >
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput4" class="form-label">Employee Salary</label><br>
+  <input name="salary" type="text" class="form-control-sm" id="exampleFormControlInput4" >
+</div>
+  <div class="col-auto"><button type="submit" class="btn btn-primary mb-3">Edit employee</button>
+  </div>
+</form>
+{% endblock %}
